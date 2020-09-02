@@ -25,11 +25,7 @@ jobs:
         couchbase-version: enterprise-6.5.0
         couchbase-configuration: dbconfig
     - name: Install dependencies
-      run: dotnet restore MattsTwitchBot.Web
-    - name: Build and Publish  # not sure if I need this step just for testing
-      run: |
-        dotnet build MattsTwitchBot.Web --configuration Release --no-restore
-        dotnet publish MattsTwitchBot.Web -c Release -o ./myapp 
+      run: dotnet restore MattsTwitchBot.sln
     - name: Tests
       run: dotnet test MattsTwitchBot.Tests --verbosity normal
       env:
