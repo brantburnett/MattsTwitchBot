@@ -13,17 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: release
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-    - name: Test files?
-      run: |
-        ls .
-        ls ./dbconfig
-        cat ./dbconfig/buckets.json
     - name: Run CouchbaseFakeIt
       uses: brantburnett/run-couchbasefakeit@v0.1
       with:
